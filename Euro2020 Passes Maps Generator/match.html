@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match</title>
+    <link rel="stylesheet" href="{% static 'css/page2.css' %}">
+</head>
+<body>
+
+    <header>
+        <div id="upperdiv">
+            <div id="logo">
+                <p id="title">EURO2020</p>
+                <img src="{% static 'imgs/euro2020.png' %}" width="40px" height="40px">
+            </div>
+        </div>
+        <a><div id="opt">TeamSheets</div></a>
+    </header>
+
+    <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center;">Choose a player to show his passes map!</h1>
+    <ul id="team1">
+        {%for player in team1_players%}
+        <li>
+            <div><a href="{%url 'stats' match_id=match_id player_id=forloop.counter ha='h'%}">{{player}}</a></div>
+        </li>
+        {%endfor%}
+    </ul>
+    <ul id="team2">
+        {%for player in team2_players%}
+        <li>
+            <div><a href="{%url 'stats' match_id=match_id player_id=forloop.counter ha='a'%}">{{player}}</a></div>
+        </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>

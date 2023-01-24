@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/page1.css' %}">
+</head>
+
+
+<body>
+
+    <header>
+        <div id="upperdiv">
+            <div id="logo">
+                <p id="title">EURO2020</p>
+                <img src="{% static 'imgs/euro2020.png' %}" width="40px" height="40px">
+            </div>
+        </div>
+        <a href="home.html"><div id="lowerdiv"
+                                 style="background-color:#0c3fe9;display:block;
+    color:white;
+    text-align:center;
+    width: 1366px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Fixtures
+        </div></a>
+    </header>
+
+    <ul id="matches">
+
+        <a href="{%url 'match' 3794688%}"><div class="match" id="match1" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+            <p>England</p>
+            <div class="score">2 - 0</div>
+            <p>Germany</p>
+        </div></a>
+
+        <a href="{%url 'match' 3794691%}"><div class="match" id="match2" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+            <p>France</p>
+            <div class="score">3 - 3 4-5</div>
+            <p>Switzerland</p>
+        </div></a>
+
+        <a href="{%url 'match' 3794685%}"><div class="match" id="match3" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+            <p>Italy</p>
+            <div class="score">2 - 1</div>
+            <p>Austria</p>
+        </div></a>
+
+    </ul>
+
+</body>
+
+</html>
